@@ -12,12 +12,11 @@ return new class () extends Migration {
     {
         Schema::create('materias', function (Blueprint $table) {
             $table->id();
-            // $table->timestamps();
+            $table->date('data_de_publicacao')->default(now());
             $table->string('titulo');
             $table->text('descricao');
             $table->text('texto_completo');
             $table->string('imagem');
-            $table->date('data_de_publicacao');
         });
     }
 
