@@ -21,9 +21,12 @@
                     <a class="nav-link" href="/">Inicio</a>
                     </li>
                 </ul>
-
             </div>
         </nav>
         @yield('content')
+        <footer class="footer mt-auto py-3 bg-dark text-white w-100">
+            <div class="container text-center">
+                <span>© 2024 - Todos os direitos reservados</span>
+            </div>
     </body>
 </html>
