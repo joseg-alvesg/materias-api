@@ -16,7 +16,7 @@ return new class () extends Migration {
             $table->string('titulo');
             $table->text('descricao');
             $table->text('texto_completo');
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
         });
     }
 
