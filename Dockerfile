@@ -1,5 +1,5 @@
 FROM php:8.2.0-apache
-WORKDIR /var/www/html
+WORKDIR /var/www
 
 RUN a2enmod rewrite
 
@@ -21,3 +21,8 @@ RUN docker-php-ext-install pdo_mysql gettext intl gd
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg --enable-gd \
     && docker-php-ext-install -j$(nproc) gd
 
+RUN chown -R www-data:www-data /var/www
+
+EXPOSE 8000
+
+CMD ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "8000"]

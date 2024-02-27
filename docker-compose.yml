@@ -7,11 +7,13 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./:/var/www/html
+      - ./:/var/www
     ports:
-      - 8080:80
+      - 8000:8000
     depends_on:
       - mysql
+    networks:
+      - app-network
 
   mysql:
     image: mysql:latest
@@ -22,3 +24,10 @@ services:
       MYSQL_PASSWORD: root
     ports:
       - 3306:3306
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
