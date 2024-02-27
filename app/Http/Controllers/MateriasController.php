@@ -13,4 +13,11 @@ class MateriasController extends Controller
         return view('materias.index', ['materias' => $materias]);
     }
 
+    public function materia()
+    {
+        $id = Request('id');
+        $materia = Materias::find($id);
+        return view('materias.materia', ['materia' => $materia]);
+    }
+
 }

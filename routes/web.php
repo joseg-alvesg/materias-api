@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MateriasController::class, 'index']);
+Route::get('/materias/{id}', [MateriasController::class, 'materia']);
