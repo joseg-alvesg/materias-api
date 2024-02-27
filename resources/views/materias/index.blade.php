@@ -3,14 +3,19 @@
 @section('title', 'Materias')
 
 @section('content')
-    <h1>Blog</h1>
-
-<div>
-
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
     @foreach($materias as $materia)
-    <img src="/images/{{ $materia->imagem }}" alt="{{ $materia->titulo }}" width="100">
-    <h2>{{ $materia->titulo }}</h2>
-    <p>{{ $materia->descricao }}</p>
+    <div class="col">
+        <div class="card h-100">
+            <img src="/images/{{ $materia->imagem }}" alt="{{ $materia->titulo }}" class="card-img-top" style="object-fit: cover; height: 200px;">
+            <div class="card-body d-flex flex-column">
+                <h2 class="card-title">{{ $materia->titulo }}</h2>
+                <h3 class="card-text">{{ $materia->descricao }}</h3>
+                <p class="card-text">{{ $materia->data_de_publicacao }}</p>
+                <a href="/materias/{{ $materia->id }}" class="btn btn-primary mt-auto">Ler mais</a>
+            </div>
+        </div>
+    </div>
     @endforeach
 </div>
 @endsection
