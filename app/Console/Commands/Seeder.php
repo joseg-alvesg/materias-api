@@ -28,5 +28,6 @@ class Seeder extends Command
         $dockerCommand = 'docker exec -it laravel php artisan db:seed --class=MateriasTableSeeder --force';
         $this->info('Running seeder...');
         exec($dockerCommand, $output);
+        $this->info(implode("\n", $output));
     }
 }

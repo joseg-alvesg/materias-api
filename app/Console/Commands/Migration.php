@@ -28,5 +28,6 @@ class Migration extends Command
         $dockerCommand = 'docker exec -it laravel php artisan migrate --force';
         $this->info('Running migration...');
         exec($dockerCommand, $output);
+        $this->info(implode("\n", $output));
     }
 }
