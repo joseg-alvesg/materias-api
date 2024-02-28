@@ -21,3 +21,13 @@ Route::post('/materias/update', [MateriasController::class, 'update']);
 Route::get('/materias/delete/{id}', [MateriasController::class, 'delete']);
 Route::get('/materias/{id}', [MateriasController::class, 'materia']);
 Route::post('/materias', [MateriasController::class, 'store']);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
