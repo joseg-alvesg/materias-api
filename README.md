@@ -19,9 +19,9 @@ php artisan app:refresh-seed
     - [x] get by id
         - [x] render
         - [x] css
-    - [ ] post
-        - [ ] form
-        - [ ] save
+    - [x] post
+        - [x] form
+        - [x] save
     - [ ] put
     - [ ] delete
 - [ ] melhorias

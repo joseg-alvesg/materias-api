@@ -25,6 +25,13 @@ class MateriasController extends Controller
         return view('materias.create');
     }
 
+    public function edit()
+    {
+        $id = Request('id');
+        $materia = Materias::find($id);
+        return view('materias.edit', ['materia' => $materia]);
+    }
+
     private function imageUpload($image)
     {
         $ext = $image->extension();
@@ -44,6 +51,20 @@ class MateriasController extends Controller
         }
         $materia->save();
         $id = $materia->id;
+        return redirect('/materias/' . $id);
+    }
+
+    public function update(Request $request)
+    {
+        $id = $request->id;
+        $materia = Materias::find($id);
+        $materia->titulo = $request->titulo;
+        $materia->descricao = $request->descricao;
+        $materia->texto_completo = $request->texto_completo;
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()) {
+            $materia->imagem = $this->imageUpload($request->imagem);
+        }
+        $materia->save();
         return redirect('/materias/' . $id);
     }
 

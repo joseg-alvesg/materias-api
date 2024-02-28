@@ -7,8 +7,8 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </head>
-    <body margin="0" class="d-flex flex-column align-items-center justify-items-center">
-        <nav class="navbar w-100 navbar-expand-lg navbar-dark bg-dark">
+    <body margin="0" class="d-flex flex-column align-items-center justify-items-center position-relative">
+        <nav class="navbar w-100 navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">
                 <img src="" alt="" class="d-inline-block align-text-top" />
@@ -16,15 +16,18 @@
                 </a>
             </div>
             <div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Inicio</a>
-                    </li>
-                </ul>
+                    <a class="nav-link text-decoration-underline" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-decoration-underline" href="/materias/create">Criar</a>
+                </li>
+            </ul>
             </div>
         </nav>
         @yield('content')
-        <footer class="footer mt-auto py-3 bg-dark text-white w-100">
+        <footer class="footer mt-auto py-2 bg-dark text-white w-100 bottom-0">
             <div class="container text-center">
                 <span>© 2024 - Todos os direitos reservados</span>
             </div>
