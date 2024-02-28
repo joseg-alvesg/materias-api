@@ -17,6 +17,7 @@ return new class () extends Migration {
             $table->text('descricao');
             $table->text('texto_completo');
             $table->string('imagem')->nullable();
+            $table->timestamps();
         });
     }
 

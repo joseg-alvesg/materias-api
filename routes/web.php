@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MateriasController::class, 'index']);
+Route::get('/materias/create', [MateriasController::class, 'create']);
 Route::get('/materias/{id}', [MateriasController::class, 'materia']);
+Route::post('/materias', [MateriasController::class, 'store']);
