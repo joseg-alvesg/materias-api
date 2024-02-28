@@ -11,6 +11,10 @@
             <img src="/images/{{ $materia->imagem }}" alt="{{ $materia->titulo }}" class="img-fluid mb-3">
             <p>{{ $materia->texto_completo }}</p>
             <p>Publicado em: {{ $materia->data_de_publicacao }}</p>
+            <p>
+                <a href="/materias/edit/{{ $materia->id }}" class="btn btn-primary">Editar</a>
+                <a href="/materias/delete/{{ $materia->id }}" class="btn btn-danger">Excluir</a>
+            </p>
         </div>
     </div>
 </div>

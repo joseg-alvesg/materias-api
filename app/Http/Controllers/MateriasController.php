@@ -32,6 +32,14 @@ class MateriasController extends Controller
         return view('materias.edit', ['materia' => $materia]);
     }
 
+    public function delete()
+    {
+        $id = Request('id');
+        $materia = Materias::find($id);
+        $materia->delete();
+        return redirect('/');
+    }
+
     private function imageUpload($image)
     {
         $ext = $image->extension();

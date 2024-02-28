@@ -25,7 +25,6 @@
             <label for="imagem">Imagem:</label>
             <input type="file" class="form-control-file fs-4" id="imagem" name="imagem">
         </div>
-            <!-- button on the right -->
         <button type="submit" class="btn btn-primary mb-3 fs-4 w-25 d-inline-block float-end" style=" height: 50px;">Criar</button>
     </form>
 </div>

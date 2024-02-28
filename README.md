@@ -22,9 +22,13 @@ php artisan app:refresh-seed
     - [x] post
         - [x] form
         - [x] save
-    - [ ] put
-    - [ ] delete
+    - [x] put
+    - [x] delete
 - [ ] melhorias
     - [ ] css
     - [ ] design
+- [ ] validação de usuario
+    - [ ] token
+    - [ ] tabela
 - [ ] ...
+
