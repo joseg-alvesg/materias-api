@@ -3,9 +3,9 @@
 @section('title', 'Materias')
 
 @section('content')
-<div class="row row-cols-2 row-cols-md-4 g-4 mt-3">
+<div class="d-flex flex-wrap gap-4 mt-3 text-sm w-75 justify-content-center">
     @foreach($materias as $materia)
-    <div class="col">
+    <div class="w-25">
         <div class="card h-100">
             <img src="/images/{{ $materia->imagem }}" alt="{{ $materia->titulo }}" class="card-img-top" style="object-fit: cover; height: 200px;">
             <div class="card-body d-flex flex-column">
