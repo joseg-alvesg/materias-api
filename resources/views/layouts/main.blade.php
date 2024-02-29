@@ -16,14 +16,38 @@
                 </a>
             </div>
             <div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">
-                    <a class="nav-link text-decoration-underline" href="/">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-decoration-underline" href="/materias/create">Criar</a>
-                </li>
-            </ul>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link text-decoration-underline" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        @auth
+                        <a class="nav-link text-decoration-underline" href="/materias/create">Criar</a>
+                        @endauth
+                        @guest
+                        <a class="nav-link text-decoration-underline" href="/login">Criar</a>
+                        @endguest
+                    </li>
+                    @guest
+                    <li class="nav-item">
+                        <a class="nav-link text-decoration-underline" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-decoration-underline" href="/register">Registrar</a>
+                    </li>
+                    @endguest
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link text-decoration-underline" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <form action="/logout" method="post">
+                            @csrf
+                            <a class="nav-link text-decoration-underline" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+                        </form>
+                    </li>
+                    @endauth
+                </ul>
             </div>
         </nav>
         @yield('content')
