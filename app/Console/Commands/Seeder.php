@@ -25,7 +25,7 @@ class Seeder extends Command
      */
     public function handle()
     {
-        $dockerCommand = 'docker exec -it laravel php artisan db:seed --class=MateriasTableSeeder --force';
+        $dockerCommand = 'docker exec -it laravel php artisan migrate:fresh --seed --force';
         $this->info('Running seeder...');
         exec($dockerCommand, $output);
         $this->info(implode("\n", $output));
