@@ -1,7 +1,5 @@
 @extends('layouts.main')
-
 @section('title', 'Materias')
-
 @section('content')
 <div class="row row-cols-1 row-cols-md-2 g-4 mt-3 w-75" style="margin-bottom: 40px;">
     @foreach($materias as $materia)

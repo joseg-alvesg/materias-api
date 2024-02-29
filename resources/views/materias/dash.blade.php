@@ -1,7 +1,5 @@
 @extends('layouts.main')
-
 @section('title', 'Materias')
-
 @section('content')
 <div class="d-flex flex-wrap gap-4 mt-3 text-sm w-75 justify-content-center">
     @foreach($materias as $materia)

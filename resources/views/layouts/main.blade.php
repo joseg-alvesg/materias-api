@@ -10,10 +10,16 @@
     <body margin="0" class="d-flex flex-column align-items-center justify-items-center position-relative">
         <nav class="navbar w-100 navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/">
-                <img src="" alt="" class="d-inline-block align-text-top" />
-                        marca
+                @auth
+                <a class="navbar-brad">
+                    {{ auth()->user()->name }}
                 </a>
+                @endauth
+                @guest
+                <a class="navbar-brand" href="/">
+                    Bem-vindo
+                </a>
+                @endguest
             </div>
             <div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">

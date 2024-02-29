@@ -1,7 +1,5 @@
 @extends('layouts.main')
-
 @section('title', 'Criar Matéria')
-
 @section('content')
 @csrf
 <div class="container mt-2 fs-3" style="height: 100vh;">

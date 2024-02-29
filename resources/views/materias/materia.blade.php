@@ -1,7 +1,5 @@
 @extends('layouts.main')
-
 @section('title', 'Materia')
-
 @section('content')
 <div class="container mt-2" style="margin-bottom: 40px;">
     <div class="row">
@@ -12,12 +10,12 @@
             <p>{{ $materia->texto_completo }}</p>
             <p>Publicado em: {{ $materia->data_de_publicacao }}</p>
             @auth
-                @if(auth()->user()->id == $materia->user_id)
-                    <p>
-                        <a href="/materias/edit/{{ $materia->id }}" class="btn btn-primary">Editar</a>
-                        <a href="/materias/delete/{{ $materia->id }}" class="btn btn-danger">Excluir</a>
-                    </p>
-                @endif
+            @if(auth()->user()->id == $materia->user_id)
+            <p>
+                <a href="/materias/edit/{{ $materia->id }}" class="btn btn-primary">Editar</a>
+                <a href="/materias/delete/{{ $materia->id }}" class="btn btn-danger">Excluir</a>
+            </p>
+            @endif
             @endauth
         </div>
     </div>
