@@ -7,7 +7,7 @@
 <div class="container mt-2 fs-3" style="height: 100vh;">
     <h1 class="mt-3">Criar Matéria</h1>
     <hr class="w-50">
-    <form action="/materias" method="post" enctype="multipart/form-data" class="w-50 mt-5">
+    <form action="/materias/store" method="post" enctype="multipart/form-data" class="w-50 mt-5">
         @csrf
         <div class="form-group mb-3">
             <label for="titulo">titluo:</label>

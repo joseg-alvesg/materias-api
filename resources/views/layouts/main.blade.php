@@ -38,7 +38,7 @@
                     @endguest
                     @auth
                     <li class="nav-item">
-                        <a class="nav-link text-decoration-underline" href="/dashboard">Dashboard</a>
+                        <a class="nav-link text-decoration-underline" href="/dashboard">Perfil</a>
                     </li>
                     <li class="nav-item">
                         <form action="/logout" method="post">
@@ -46,14 +46,26 @@
                             <a class="nav-link text-decoration-underline" href="/logout" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
                         </form>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-decoration-underline" href="/user/dash">Dashboard</a>
+                    </li>
                     @endauth
                 </ul>
             </div>
         </nav>
+        @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @endif
         @yield('content')
-        <footer class="footer mt-auto py-2 bg-dark text-white w-100 bottom-0">
+        <footer class="footer mt-auto py-2 bg-dark text-white w-100 fixed-bottom">
             <div class="container text-center">
                 <span>© 2024 - Todos os direitos reservados</span>
+                <span class="inline-block float-end rounded">
+                    <a href="#" class="text-white-50 text-decoration-none">top</a>
+                </span>
             </div>
+        </footer>
     </body>
 </html>

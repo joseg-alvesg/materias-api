@@ -108,6 +108,14 @@
                                 </x-dropdown-link>
                             @endif
 
+                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                {{ __('Manage Team') }}
+                            </div>
+
+                            <x-dropdown-link href="/">
+                                {{ __('Home') }}
+                            </x-dropdown-link>
+
                             <div class="border-t border-gray-200"></div>
 
                             <!-- Authentication -->

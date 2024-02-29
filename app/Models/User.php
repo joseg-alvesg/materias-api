@@ -58,4 +58,12 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * Get the materias for the user.
+     */
+    public function materias()
+    {
+        return $this->hasMany(Materias::class);
+    }
 }

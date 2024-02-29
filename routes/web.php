@@ -15,12 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MateriasController::class, 'index']);
+
 Route::get('/materias/create', [MateriasController::class, 'create']);
+Route::post('/materias/store', [MateriasController::class, 'store']);
+
 Route::get('/materias/edit/{id}', [MateriasController::class, 'edit']);
 Route::post('/materias/update', [MateriasController::class, 'update']);
+
 Route::get('/materias/delete/{id}', [MateriasController::class, 'delete']);
 Route::get('/materias/{id}', [MateriasController::class, 'materia']);
-Route::post('/materias', [MateriasController::class, 'store']);
+
+Route::get('/user/dash', [MateriasController::class, 'materiasByUser']);
 
 Route::middleware([
     'auth:sanctum',
