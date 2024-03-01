@@ -18,7 +18,7 @@ class Seeder extends Command
      *
      * @var string
      */
-    protected $description = 'populate the database with examples';
+    protected $description = 'Populate the database with examples';
 
     /**
      * Execute the console command.
@@ -29,5 +29,6 @@ class Seeder extends Command
         $this->info('Running seeder...');
         exec($dockerCommand, $output);
         $this->info(implode("\n", $output));
+        $this->info('set a new temporary alias for the command: alias seeder="docker exec -it laravel php artisan app:seeder"');
     }
 }

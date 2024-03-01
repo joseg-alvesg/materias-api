@@ -15,6 +15,12 @@ class Materias extends Model
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * Get the data_de_publicação in the format d-m-Y
+     *
+     * @param  string  $value
+     * @return string
+     */
     public function getDataDePublicacaoAttribute($value)
     {
         return \Carbon\Carbon::parse($value)->format('d-m-Y');

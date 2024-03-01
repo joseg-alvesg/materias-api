@@ -44,6 +44,11 @@ class MateriasController extends Controller
         return view('materias.create');
     }
 
+    /**
+     * Show the form to edit a post.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function edit()
     {
         if (!auth()->user()) {
@@ -57,6 +62,11 @@ class MateriasController extends Controller
         return view('materias.edit', ['materia' => $materia]);
     }
 
+    /**
+     * Delete a post.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function delete(Request $request)
     {
         if(!auth()->user()) {
@@ -71,6 +81,11 @@ class MateriasController extends Controller
         return redirect('/');
     }
 
+    /**
+     * Upload image to public/images
+     *
+     * @return string hash name of the image
+     */
     private function imageUpload($image)
     {
         $ext = $image->extension();
@@ -79,6 +94,13 @@ class MateriasController extends Controller
         return $name;
     }
 
+    /**
+     * Store a new post.
+     * uses imageUpload to upload the image
+     * come from the request of the form create
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         if (!auth()->user()) {
@@ -98,6 +120,13 @@ class MateriasController extends Controller
         return redirect('/materias/' . $id);
     }
 
+    /**
+     * Update a post.
+     * uses imageUpload to upload the image
+     * come from the request of the form edit
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request)
     {
         if(!auth()->user()) {
@@ -119,7 +148,12 @@ class MateriasController extends Controller
         return redirect('/materias/' . $id);
     }
 
-    public function materiasByUser(Request $request)
+    /**
+     * Show the posts from the logged user.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function materiasByUser()
     {
         $user_id = auth()->user()->id;
         $materias = Materias::where('user_id', $user_id)->get();

@@ -12,6 +12,12 @@ class MateriasTableSeeder extends Seeder
         $this->deleteImage('images');
     }
 
+    /**
+     * Run the database seeds.
+     * populates the materias table with example data
+     *
+     * @return void
+     */
     public function run(): void
     {
         $user1 = DB::table('users')->where('email', 'test@example.com')->first();
@@ -44,6 +50,11 @@ class MateriasTableSeeder extends Seeder
         DB::table('materias')->insert($materias);
     }
 
+    /**
+     * Delete the images from the public/images folder
+     *
+     * @return void
+     */
     private function deleteImage()
     {
         $destinationPath = public_path('images');
@@ -61,6 +72,12 @@ class MateriasTableSeeder extends Seeder
 
     }
 
+    /**
+     * Save the image to the public/images folder
+     *
+     * @param string $imagePath
+     * @return string
+     */
     private function saveImage($imagePath)
     {
         $imageContent = file_get_contents(public_path($imagePath));
