@@ -38,6 +38,9 @@ class MateriasController extends Controller
      */
     public function create()
     {
+        if (!auth()->user()) {
+            return redirect('/')->with('error', 'Você precisa estar logado para criar uma matéria');
+        }
         return view('materias.create');
     }
 
@@ -72,6 +75,9 @@ class MateriasController extends Controller
 
     public function store(Request $request)
     {
+        if (!auth()->user()) {
+            return redirect('/')->with('error', 'Você precisa estar logado para criar uma matéria');
+        }
         $materia = new Materias();
         $materia->titulo = $request->titulo;
         $materia->descricao = $request->descricao;
