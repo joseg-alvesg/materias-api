@@ -40,22 +40,6 @@ class GetRoutesTest extends TestCase
             $this->assertArrayHasKey('data_de_publicacao', $materia);
             $this->assertArrayHasKey('texto_completo', $materia);
         };
-
-        // unitario
-        // $expected = [
-        //     'id' => 1,
-        //     'titulo' => 'Título da Matéria 1',
-        //     'descricao' => 'Descrição da Matéria 1',
-        //     'data_de_publicacao' => now()->format('Y-m-d'),
-        //     'texto_completo' => 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.',
-        // ];
-
-        // $data = $response->original->getData()['materias'][0];
-        // $this->assertEquals($expected['titulo'], $data['titulo']);
-        // $this->assertEquals($expected['descricao'], $data['descricao']);
-        // $this->assertEquals($expected['data_de_publicacao'], $data['data_de_publicacao']);
-        // $this->assertEquals($expected['texto_completo'], $data['texto_completo']);
-        // $this->assertArrayHasKey('imagem', $data);
     }
 
     /**
