@@ -44,8 +44,11 @@ class MateriasController extends Controller
         return view('materias.create');
     }
 
-    public function edit(request $request)
+    public function edit()
     {
+        if (!auth()->user()) {
+            return redirect('/')->with('error', 'Você precisa estar logado para editar uma matéria');
+        }
         $id = Request('id');
         $materia = Materias::find($id);
         if(auth()->user()->id != $materia->user_id) {
@@ -56,6 +59,9 @@ class MateriasController extends Controller
 
     public function delete(Request $request)
     {
+        if(!auth()->user()) {
+            return redirect('/')->with('error', 'Você precisa estar logado para excluir uma matéria');
+        }
         $id = $request->id;
         $materia = Materias::find($id);
         if(auth()->user()->id != $materia->user_id) {
@@ -94,6 +100,9 @@ class MateriasController extends Controller
 
     public function update(Request $request)
     {
+        if(!auth()->user()) {
+            return redirect('/')->with('error', 'Você precisa estar logado para editar uma matéria');
+        }
         $id = $request->id;
         $materia = Materias::find($id);
         if(auth()->user()->id != $materia->user_id) {
