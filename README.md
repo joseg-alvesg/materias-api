@@ -14,18 +14,17 @@ funciona para reiniciar o container
 php artisan app:seeder
 
 # caso queira um db limpo
-# substitua co comando de cima por esse
-docker exec -it php artisan migrate --force
+# substitua o comando de cima por esse
+docker exec -it laravel php artisan migrate --force
 ```
 
-copie o arquivo .env pré configurado para acesso padrão
-
+copie o arquivo .env pré configurado para acesso padrão, 
 altere as chaves de DB conforme necessario
 ```bash
 cp .env.example .env
 ```
 
-geração da chave da maquina
+Atualização do APP_KEY
 ```bash
 php artisan key:generate
 ```
